@@ -21,7 +21,9 @@
     "@wpackio/scripts": "^6.2.0",
     "dir-archiver": "^1.1.1",
     "node-sass": "^4.14.1",
-    "rtlcss": "^2.5.0"
+    "postcss": "^8.2.14",
+    "rtlcss": "^2.5.0",
+    "sass": "^1.32.12"
   },
   "rtlcssConfig": {
     "options": {
@@ -43,6 +45,12 @@
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map",
-    "bootstrap": "wpackio-scripts bootstrap"
+    "bootstrap": "wpackio-scripts bootstrap",
+    "build": "wpackio-scripts build",
+    "start": "wpackio-scripts start",
+    "archive": "wpackio-scripts pack"
+  },
+  "dependencies": {
+    "@wpackio/entrypoint": "^6.0.1"
   }
 }
