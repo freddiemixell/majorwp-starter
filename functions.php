@@ -139,7 +139,12 @@ add_action( 'widgets_init', 'major_wp_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
+
+require_once __DIR__ . '/inc/classes/Enqueue.php';
+
 function major_wp_scripts() {
+	$enqueue = new \WPackio\Enqueue( 'majorwp', 'dist', '1.0.0', 'theme', __FILE__ );
+	$enqueue->enqueue( 'main', 'main', [] );
 	wp_enqueue_style( 'major-wp-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'major-wp-style', 'rtl', 'replace' );
 
