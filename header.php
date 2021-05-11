@@ -26,34 +26,45 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'major-wp' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<nav class="navbar is-relative" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
 				<?php
-			else :
+					the_custom_logo();
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$major_wp_description = get_bloginfo( 'description', 'display' );
-			if ( $major_wp_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $major_wp_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'major-wp' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				</a>
+			</div>
+
+			<div id="navbarBasicExample" class="navbar-menu">
+				<div class="navbar-start is-centered-absolute">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'menu-1',
+							'menu_class'      => '',
+							'container'       => false,
+							'items_wrap'      => '%3$s'
+						)
+					);
+					?>
+				</div>
+
+				<div class="navbar-end">
+				<div class="navbar-item">
+					<div class="buttons">
+					<a class="button is-primary">
+						<strong>Sign up</strong>
+					</a>
+					<a class="button is-light">
+						Log in
+					</a>
+					</div>
+				</div>
+				</div>
+			</div>
+		</nav>
 	</header><!-- #masthead -->
