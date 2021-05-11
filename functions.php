@@ -186,8 +186,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Add active class to current page while stripping all other classes to be ocd.
  */
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-function special_nav_class($classes, $item){
+add_filter('nav_menu_css_class' , 'fm_special_nav_class' , 10 , 2);
+function fm_special_nav_class($classes, $item){
 	$new_classes = [ 'navbar-item' ];
 
      if( in_array( 'current-menu-item', $classes ) ){
