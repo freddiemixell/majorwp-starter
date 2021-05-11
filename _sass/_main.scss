@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+$family-sans-serif: "Helvetica", "Arial", sans-serif;
+$navbar-item-color: #c5c6c7;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: #66fcf1;
+$primary-invert: #0b0c10;
+
+$card-radius: 0.5rem;
+
+.card {
+  border-radius: 0.25rem;
+}
+
+// 4. Import the rest of Bulma
+
+@import "../node_modules/bulma/bulma";
