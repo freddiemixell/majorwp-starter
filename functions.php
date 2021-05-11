@@ -195,3 +195,31 @@ function fm_special_nav_class($classes, $item){
      }
      return $new_classes;
 }
+
+/**
+ * Filter Widget Classes
+ */
+add_filter( 'dynamic_sidebar_params', 'fm_change_widget_classes', 10, 1 );
+function fm_change_widget_classes( $params ) {
+	$params[0]['before_widget'] = '<section class="widget section">';
+
+	return $params;
+}
+
+/**
+ * Filter Search Form
+ */
+add_filter( 'get_search_form', 'fm_filter_search_form', 10, 1 );
+function fm_filter_search_form( $form ) {
+	$form = "
+	<form role=\"search\" method=\"get\" class=\"search-form\" action=\"http://lancasterbreweries.test/\">
+		<label>
+			<span class=\"screen-reader-text\">Search for:</span>
+			<input type=\"search\" class=\"input\" placeholder=\"Search &hellip;\" value=\"\" name=\"s\" />
+		</label>
+		<input type=\"submit\" class=\"button is-primary mt-2\" value=\"Search\" />
+	</form>
+	";
+
+	return $form;
+}
