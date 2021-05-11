@@ -20,3 +20,11 @@ $card-radius: 0.5rem;
 // 4. Import the rest of Bulma
 
 @import "../node_modules/bulma/bulma";
+
+.box {
+  .cta {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}
