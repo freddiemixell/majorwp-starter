@@ -125,4 +125,14 @@ get_header();
         </div>
     </section>
 
+    <section class="hero has-background-primary is-medium">
+        <div class="hero-body has-text-centered">
+            <h2 class="title is-spaced">There's a world of possiblities.</h2>
+            <p class="subtitle">Check out the bulma documentation for more components and elements!</p>
+            <div class="buttons is-centered">
+                <a class="button is-dark" href="https://bulma.io" target="_blank" rel="noopener">Bulma Docs</a>
+            </div>
+        </div>
+    </section>
+
 <?php get_footer(); ?>
