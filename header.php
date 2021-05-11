@@ -26,7 +26,7 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'major-wp' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<nav class="navbar is-relative" role="navigation" aria-label="main navigation">
+		<nav class="navbar has-background-dark" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<?php
 					the_custom_logo();
