@@ -178,3 +178,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Add active class to current page while stripping all other classes to be ocd.
+ */
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+	$new_classes = [ 'navbar-item' ];
+
+     if( in_array( 'current-menu-item', $classes ) ){
+        $new_classes[] = 'is-active';
+     }
+     return $new_classes;
+}
