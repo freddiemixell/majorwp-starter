@@ -9,8 +9,8 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+<article id="post-<?php the_ID(); ?>" class="section content">
+	<header class="entry-header container">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -31,7 +31,7 @@
 
 	<?php major_wp_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content container">
 		<?php
 		the_content(
 			sprintf(
