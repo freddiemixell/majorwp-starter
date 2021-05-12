@@ -11,6 +11,8 @@ $recent_posts_query = new WP_Query( [
 ] );
 
 if ( $recent_posts_query->have_posts() ) :
+
+    $featured_image_url = get_the_post_thumbnail_url( $single_post );
 ?>
 
 <div class="columns">
@@ -18,11 +20,13 @@ if ( $recent_posts_query->have_posts() ) :
 
     <div class="column is-one-third">
         <div class="card">
+            <?php if ( $featured_image_url ) : ?>
             <div class="card-image">
                 <figure class="image is-4by3">
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                    <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="Post featured image.">
                 </figure>
             </div>
+            <?php endif; ?>
             <div class="card-content">
                 <?php if ( $single_post->post_excerpt ) : ?>
                 <div class="content">
