@@ -23,7 +23,7 @@ if ( $recent_posts_query->have_posts() ) :
             <?php if ( $featured_image_url ) : ?>
             <div class="card-image">
                 <figure class="image is-4by3">
-                    <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="Post featured image.">
+                    <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( get_post_meta( get_post_thumbnail_id( $single_post ), '_wp_attachment_image_alt', true ) ); ?>">
                 </figure>
             </div>
             <?php endif; ?>
