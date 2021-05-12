@@ -32,7 +32,8 @@ $card-radius: 0.5rem;
 .post-preview {
   height: max-content !important;
   width: max-content !important;
-  border-radius: 0 !important;
   border-left: none;
-  border-right: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0;
 }
