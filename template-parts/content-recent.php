@@ -21,10 +21,13 @@ if ( $recent_posts_query->have_posts() ) :
     <div class="column is-one-third">
         <div class="card">
             <?php if ( $featured_image_url ) : ?>
-            <div class="card-image">
+            <div class="card-image is-relative">
                 <figure class="image is-4by3">
                     <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php echo esc_attr( get_post_meta( get_post_thumbnail_id( $single_post ), '_wp_attachment_image_alt', true ) ); ?>">
                 </figure>
+                <div class="box post-preview is-overlay">
+                    <p><?php echo esc_html( $single_post->post_title ); ?></p>
+                </div>
             </div>
             <?php endif; ?>
             <div class="card-content">

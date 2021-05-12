@@ -23,8 +23,16 @@ $card-radius: 0.5rem;
 
 .box {
   .cta {
-    border-radius: 0;
+    border-radius: 0 !important;
     border-left: none;
     border-right: none;
   }
+}
+
+.post-preview {
+  height: max-content !important;
+  width: max-content !important;
+  border-radius: 0 !important;
+  border-left: none;
+  border-right: none;
 }
