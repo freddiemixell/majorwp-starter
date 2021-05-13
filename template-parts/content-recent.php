@@ -11,13 +11,12 @@ $recent_posts_query = new WP_Query( [
 ] );
 
 if ( $recent_posts_query->have_posts() ) :
-
-    $featured_image_url = get_the_post_thumbnail_url( $single_post );
 ?>
 
 <div class="columns">
-    <?php foreach ( $recent_posts_query->posts as $single_post ) : ?>
-        
+    <?php foreach ( $recent_posts_query->posts as $single_post ) : 
+        $featured_image_url = get_the_post_thumbnail_url( $single_post );
+        ?>
         <div class="column is-one-third">
             <div class="card">
                 <a href="<?php echo esc_url( get_permalink( $single_post ) ); ?>">
